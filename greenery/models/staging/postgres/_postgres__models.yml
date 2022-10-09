@@ -1,0 +1,17 @@
+version: 2 
+
+models:
+  - name: stg_addresses
+    description: "Table contains information on customer address"
+  - name: stg_events
+    description: "Table contains browsing sessions on the platform"
+  - name: stg_order_items
+    description: "Table contains order id, products in each order, and quantity in each order"
+  - name: stg_orders 
+    description: "Table contains all orders information"
+  - name: stg_products
+    description: "Table contains information about each product"
+  - name: stg_promos
+    description: "Table contains information on promo codes offered in the platform"
+  - name: stg_users 
+    description: "Table contains information on users"
