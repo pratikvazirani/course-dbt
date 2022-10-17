@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: fact_page_views
+    description: "A table containing information on page view events"
+    columns:
+      - name: event_guid
+        description: "Unique event id"
+        tests:
+          - not_null
+          - unique
+      - name: page_view_created_at
+        description: "Time of page view creation"
+      - name: session_guid
+        description: "Session associated with that event"
+      - name: user_guid
+        description: "User associated with that event"
+      - name: page_url
+        description: "Page link"
+      - name: product_guid
+        description: "product associated with that event"

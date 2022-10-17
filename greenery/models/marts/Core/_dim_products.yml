@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: "Detailed product information"
+    columns:
+      - name: product_guid
+        description: "Unique product id"
+        tests:
+          - not_null
+          - unique
+      - name: product_name
+        description: "Product Name of the product"
+      - name: product_price
+        description: "Price of the product"
+        tests:
+          - positive_values
+      - name: quantity_available
+        description: "quantity available in the inventory"
+        tests:
+          - positive_values
+      - name: distinct_orders
+        description: "number of distinct orders in which the product was ordered"
+      - name: latest_order_at
+        description: "last date/time the order was ordered"

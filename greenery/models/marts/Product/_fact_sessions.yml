@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: fact_sessions
+    description: "User session information"
+    columns:
+      - name: session_guid
+        tests:
+          - not_null
+          - unique
+      - name: user_guid
+      - name: order_guid
+      - name: session_started_at
+        description: "Time the session was created"
+      - name: session_ended_at
+        description: "Time the session was ended"

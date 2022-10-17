@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: int_order_product_promos
+    description: "Maps promo data and quanity of items in every order with the order information based on promo_guid and order_guid"
+    columns:
+      - name: order_guid
+        description: "Unique order id from the orders table"
+        tests:
+          - not_null
+          - unique
+
+      - name: user_guid
+        description: "user id for the order"
+        tests:
+          - not_null
+
+      - name: promo_guid
+        description: "promo id applied to that order"
+
+      - name: address_guid
+        description: "address id associated with the order"
+        tests:
+          - not_null
+
+      - name: order_created_at_utc
+        description: "when the order was created"
+
+      - name: order_cost
+        description: "total cost of the order"
+        tests:
+          - positive_values
+
+      - name: shipping_cost
+        description: "total shipping cost of the order"
+        tests:
+          - positive_values
+
+      - name: order_total_cost
+        description: "Sum of order cost and shipping cost minus any discount"
+        tests:
+          - positive_values
+   
+      - name: promo_discount
+        description: "discount applied based on promotion from the promo table"
+
+      - name: product_quantity
+        description: "total number of items bought in one order"
+        tests:
+          - positive_values
+
+      - name: tracking_id
+        description: "tracking id of the order"
+
+      - name: shipping_service
+        description: "shipping service used to deliver the order"
+
+      - name: estimated_delivery_at_utc
+        description: "Delivery estimated by the system"
+
+      - name: delivered_at_utc
+        description: "when the order was actually delivered"
+
+      - name: order_status
+        description: "order status of the order"

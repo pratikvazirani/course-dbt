@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: user_order_facts
+    description: "A table containing order information at the user level."
+    columns:
+      - name: user_guid
+        description: "The unique ID for a user."
+        tests:
+          - not_null
+          - unique
+
+      - name: lifetime_order_count
+        description: "The total number of orders a user has made ever."
+
+
+      - name: lifetime_spend_exc_shipping
+        description: "The total spend by a user ever (exc shipping)."
+
+
+      - name: lifetime_spend_inc_shipping
+        description: "The total spend of a user ever (inc shipping)."
+
+      - name: lifetime_items_purchased
+        description: "The total number of items a user has purchased ever."
+
+      - name: latest_order_at
+        description: "When their latest order was placed."
+
+      - name: earliest_order_at
+        description: "When their first order was placed."
