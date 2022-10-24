@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: int_session_events_agg
+    description: "Pivots the events data using a macro"
+    columns:
+      - name: session_guid
+        description: "Unique session id from the events table"
+        tests:
+          - not_null
+          - unique
+
+      - name: user_guid
+        description: "user id for the session"
+        tests:
+          - not_null
+
+      - name: first_event_at_utc
+        description: "Event start date time"
+
+      - name: last_event_at_utc
+        description: "event end date time"
+
+      - name: total_event_count
+        description: "Number of events happeneing"
+
+      - name: session_duration_minutes
+        description: "Total duration of the session"
+   
